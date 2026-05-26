@@ -37,3 +37,52 @@ Standard sentiment tools are easily deceived by ironic context. Passing a phrase
                                │
                                ▼
                [ Clean ASCII Table Matrix Output ]
+```
+
+## 🚀 Getting Started
+
+### 1. Prerequisites
+Ensure you have Python 3.10+ installed on your system.
+
+### 2. Installation
+Clone this repository locally and install the mandatory natural language processing frameworks:
+```bash
+git clone [https://github.com/your-github-profile/sarcasm_sentiment_engine.git](https://github.com/your-github-profile/sarcasm_sentiment_engine.git)
+cd sarcasm_sentiment_engine
+pip install spacy nltk
+```
+Compile the lightweight spaCy English linguistic parser:
+```bash
+python -m spacy download en_core_web_sm
+```
+### 3. Run the Interactive Engine
+Launch the main script execution loop to process live custom paragraphs and target entities directly via your console terminal:
+```bash
+python "sarcasm_sentiment_engine.py"
+```
+*(Enter `0` at the prompt to exit the engine environment cleanly.)*
+
+---
+
+## 📊 Evaluation Testing
+
+### Test Parameter: Trailing Conditional Sarcasm
+**Input Text:**
+> *The administration’s recent economic policy has triggered a massive disaster across the manufacturing sector, resulting in unprecedented stagnation and a severe deficit crisis. Yet, party leadership remains completely oblivious to the public backlash growing outside parliament. Oh great, another brilliant victory for the administration. The Prime Minister is executing a flawless masterclass in economic stability, if our ultimate goal as a nation was total financial ruin.*
+
+**Target Entity Keyword:** `The Prime Minister`
+
+**ASCII Matrix Report Output:**
+```text
+====================================================================================================
+POLITICAL SENTIMENT REPORT: THE PRIME MINISTER
+OVERALL STANCE            : NEGATIVE (-0.5983)
+====================================================================================================
+Sentence Evidence                                                 | Sarcasm? | Sentiment  | Score
+----------------------------------------------------------------------------------------------------
+The administration’s recent economic policy has triggered a ma..  | No       | NEGATIVE   | -0.9403
+Yet, party leadership remains completely oblivious to the publ..  | No       | NEGATIVE   | -0.4391
+Oh great, another brilliant victory for the administration.       | Yes      | NEGATIVE   | -0.836
+The Prime Minister is executing a flawless masterclass in econ..  | Yes      | NEGATIVE   | -0.1779
+====================================================================================================
+```
